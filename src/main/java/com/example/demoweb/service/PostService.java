@@ -11,12 +11,14 @@ import java.util.List;
 
 @Service
 public class PostService {
+    private static final ArrayList<Post> posts = new ArrayList<>();
+
     public List<Post> listAllPosts() {
-        List<Post> posts = new ArrayList<>();
-        posts.add(new Post("колдунство", new Date()));
-        posts.add(new Post("цыганские фокусы", new Date()));
-        posts.add(new Post("наконец-то робит как надо", new Date()));
         return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
     }
 }
 
